@@ -1,7 +1,7 @@
 DevFsi::Application.routes.draw do
   
   get "home/welcome"
-
+  
   resources :estadios
 
 
