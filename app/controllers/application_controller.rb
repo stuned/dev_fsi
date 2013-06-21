@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   private
   def autenticacao
 	authenticate_or_request_with_http_basic do |usuario, senha|
-	  usuario == 'admin' && senha == 'admin'
+	  usuario == 'clodo' && senha == 'aldo'
 	end
   end
 end
