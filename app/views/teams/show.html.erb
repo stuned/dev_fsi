@@ -1,0 +1,26 @@
+<h3>Times Cadastrados</h3>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+<h3><%= @team.nome %></h3>
+</p>
+
+<p>
+   <div id="labeltime">Perfil do Time: </div>
+  <%= @team.perfil %>
+</p>
+
+<p>
+  <div id="labeltime">Escalacao do Time: </div>
+  <%= @team.escalacao %>
+</p>
+
+<p>
+  <div id="labeltime">Grupo inicial do Time: </div>
+  <%= @team.grupo %>
+</p>
+
+
+<%= link_to '[Editar]', edit_team_path(@team) %> |
+<%= link_to '[Voltar]', teams_path %>

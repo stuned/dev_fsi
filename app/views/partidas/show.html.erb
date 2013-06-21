@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Time da Casa:</b>
+  <%= @partida.team.nome %>
+</p>
+<p>
+  <b>Time Visitante:</b>
+  <%= Team.find_by_id(@partida.team_id2).nome %>
+</p>
+<p>
+  <b>Horario:</b>
+  <%= @partida.horario.strftime('%A, %d/%B - %R') %>
+</p>
+<p>
+  <b>Gols Time da Casa:</b>
+  <%= @partida.golsA %>
+</p>
+<p>
+  <b>Gols Time Visitante:</b>
+  <%= @partida.golsB %>
+</p>
+<p>
+  <b>Estadio:</b>
+  <%= @partida.estadio.nome %>
+</p>
+
+<%= link_to 'Editar Partida', edit_partida_path(@partida) %>
+<%= link_to 'Voltar', partidas_path %>

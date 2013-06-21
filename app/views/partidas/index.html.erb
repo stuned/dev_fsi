@@ -1,0 +1,39 @@
+
+<h1>Visualizar Partidas</h1>
+
+<table>
+  <tr>
+    <th>Estadio</th>
+    <th>Data(Dia/Mes/Horario)</th>
+    <th>Time da casa</th>
+    
+    <th></th>
+    <th></th>
+    <th></th>
+    <th>Time visitante</th>
+    <th></th>
+  </tr>
+
+<% @partidas.each do |partida| %>
+  <tr>
+    <td><%= partida.estadio.nome %></td>
+    <td><%= partida.horario.strftime('%A, %d/%B - %R')%></td>
+
+    <td><%= partida.team.nome %></td>
+    <td><%= partida.golsA %></td>
+    <td>X</td>
+    <td><%= partida.golsB %></td>
+
+    <td><%= Team.find_by_id(partida.team_id2).nome %></td>
+        
+    
+    <td><%= link_to '[Mostrar dados da partida]', partida %></td>
+    <td><%= link_to '[Editar Partida]', edit_partida_path(partida) %></td>
+    <td><%= link_to '[Excluir]', partida, :confirm => "Tem certeza?", :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nova Partida', new_partida_path %>

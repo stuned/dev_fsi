@@ -1,0 +1,35 @@
+<h3>Gerenciador de Times</h3>
+
+<% if @teams %>
+<% @teams.each do |team| %>
+  <p>
+    <div id="tituloform">
+    <%= link_to team.nome, team%>
+    </div>
+  </p>
+  <p>
+    <div id="labeltime">Perfil do Time: </div>
+    <%= team.perfil %>
+  </p>
+  <p>
+    <div id="labeltime">Escalacao do Time: </div>
+    <%=  team.escalacao %>
+  </p>
+  <p>
+    <div id="labeltime">Grupo inicial do Time: </div>
+    <%= team.grupo %>
+  </p>
+  <%= link_to '[Ver Mais]', team %>
+  <%= link_to '[Editar]', edit_team_path(team)%>
+  <%= link_to '[Excluir]', team,:confirm => "Tem certeza?", :method => :delete %>
+  <hr />
+<% end %>
+<% end %>
+
+ 
+<br />
+
+<%= link_to 'Novo time', new_team_path %>
+
+
+

@@ -1,0 +1,41 @@
+<%= form_for(@partida) do |f| %>
+  <% if @partida.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@partida.errors.count, "error") %> prohibited this partida from being saved:</h2>
+
+      <ul>
+      <% @partida.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>  
+  
+  <div class="field">
+    <%= f.label :golsB, "Gols Time da Casa:" %>
+    <%= f.number_field :golsA, :min => 0 %>
+  </div>
+  <div class="field">
+    <%= f.label :golsB, "Gols Time Visitante:" %>
+    <%= f.number_field :golsB, :min => 0 %>
+  </div>
+  <div class="field">
+    <%= f.label :Time_da_Casa, "Time da Casa:" %>
+    <%= f.select :team_id, @teams.collect { |t| [t.nome, t.id] } %>
+  </div>
+ <div class="field">
+    <%= f.label :Time_Visitante, "Time Visitante:" %>
+    <%= f.select :team_id2, @teams.collect { |t2| [t2.nome, t2.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label :Horario, "Horario(Dia/Mes/Ano/Hora-Minutos):" %>
+    <%= f.datetime_select :horario, :date_separator => '/', :order => [:day, :month, :year], :discard_seconds => true%>
+  </div>
+  <div class="field">
+    <%= f.label :estadio, "Estadio:" %>
+    <%= f.select :estadio_id, @estadios.collect{ |e| [e.nome, e.id] } %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

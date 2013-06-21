@@ -1,0 +1,27 @@
+<h3>Estadio Cadastrados</h3>
+
+<table>
+  <tr>
+    <th>Nome do Estadio:</th>
+    <th>Cidade:</th>
+    <th>Estado:</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @estadios.each do |estadio| %>
+  <tr>
+    <td><%= estadio.nome %></td>
+    <td><%= estadio.cidade %></td>
+    <td><%= estadio.estado %></td>
+    <td><%= link_to '[Mostrar]', estadio %></td>
+    <td><%= link_to '[Editar]', edit_estadio_path(estadio) %></td>
+    <td><%= link_to '[Excluir]', estadio, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '[Novo Estadio]', new_estadio_path %>

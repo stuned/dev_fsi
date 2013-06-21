@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  team: 
+  horario: 2013-06-03 17:30:51
+  estadio: MyString
+
+two:
+  team: 
+  horario: 2013-06-03 17:30:51
+  estadio: MyString

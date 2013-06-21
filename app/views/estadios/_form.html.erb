@@ -1,0 +1,29 @@
+<%= form_for(@estadio) do |f| %>
+  <% if @estadio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@estadio.errors.count, "error") %> prohibited this estadio from being saved:</h2>
+
+      <ul>
+      <% @estadio.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome, "Nome do Estadio:"%><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :cidade, "Cidade do Estadio:" %><br />
+    <%= f.text_field :cidade %>
+  </div>
+  <div class="field">
+    <%= f.label :estado, "Estado do Estadio:" %><br />
+    <%= f.text_field :estado %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
