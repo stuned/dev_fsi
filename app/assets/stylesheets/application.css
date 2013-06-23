@@ -42,7 +42,6 @@ textarea#message_area {
 }
 
 
-
 body {
 	margin: 0;
 	padding: 0;
@@ -101,6 +100,7 @@ a:hover {
 	padding: 0;
 	color: #000000;
 }
+
 #logo h1, #logo p {
 }
 #logo h1 {
@@ -118,6 +118,7 @@ a:hover {
 	font-style: italic;
 	color: #FFFFFF;
 }
+
 #logo a {
 	border: none;
 	background: none;
@@ -167,23 +168,21 @@ a:hover {
 }
 #page-bgtop {
         float: right;
-	width: 79%;
-        height: 100%;
-       
+	max-width: 700px;
+        max-height: 300px;
+        
+	
 }
 #page-bgtop2 {
-       float: left;
-        width: 20%;
-        height: 100%;
-    
+	float: left;
+        max-width: 200px;
+        max-height: 100px;
+	
+	
 }
-
 
 
 /* Content */
-
-
-
 
 .h1 {
 	margin-bottom: 40px;

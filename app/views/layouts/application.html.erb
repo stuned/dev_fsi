@@ -1,58 +1,3 @@
-<!--<!DOCTYPE html>
-<html>
-<head>
-  <title>Programa Tabela Copa-2014</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  
-  
-  
-  
-    <style>
-        body { margin: 0; padding: 0; text-align: center }
-        #capa{background: green}
-        .guia2{background: silver; float: left; display: block;}
-        .guia1{background: blue; float: left; display: block;}
-    </style>
-
-    
-    
-</head>
-<body>
- 
-    
-    <div id="wrapper">
-        
-   <div id="capa">
-    <img  width="300px" src="C:\dev_fsi\app\assets\images\copa-2014.jpeg"/>
-   
-   </div>
-   <div align="left" id="menu" style="background: silver">
-        <a href="" target="">Tabela Campeonato</a>
-        <a href="">Times</a>
-        <a href="estadios/index.html.erb">Estadios</a>
-        <a href="">Login</a>
-        <a href="" target="">Sobre</a>
-    </div>
-   <div id="listatimes" class="guia1" style="width: 20%; height:100%">
-    
-   </div>
-   <div id="conteudo" class="guia2" style="width: 80%; height:100%">
-    
-    <%= yield %>
-    
-   </div>
-    </div>
-
-
-
-
-
-</body>
-</html>
--->
-
 <!DOCTYPE html>
 <!--
 Design by Free CSS Templates
@@ -68,9 +13,13 @@ Released   : 20100529
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 <title>Tabela Copa do Mundo - FSI</title>
   <%= stylesheet_link_tag :application %>
-  
+
   <%= javascript_include_tag :application %>
   <%= csrf_meta_tag %>
   
@@ -83,6 +32,7 @@ Released   : 20100529
 				<h1><%= link_to 'Gerenciador Copa', home_welcome_path %></h1>
 				<p>Projeto de FSI - Tabela Copa</p>
 			</div>
+			
 			<div id="menu">
 				<ul>
 					<li class="current_page_item"><%= link_to 'Home', home_welcome_path %></li>
@@ -96,11 +46,11 @@ Released   : 20100529
 	<!-- end #header -->
 	<div id="page">
                 <div id="page-bgtop2" >
-               <a class="twitter-timeline" href="https://twitter.com/portalcopa2014" data-widget-id="347412969681981441">Tweets de @portalcopa2014</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                <a class="twitter-timeline" href="https://twitter.com/portalcopa2014" data-widget-id="347412969681981441">Tweets de @portalcopa2014</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
                 </div>
-		<div id="page-bgtop"> 
+		<div id="page-bgtop" > 
 			<div id="page-bgbtm" >
 			<%= yield %>
 				<div style="clear: both;"> </div>
@@ -109,7 +59,7 @@ Released   : 20100529
 		</div>
                
 	</div>
-         
+	
 	<!-- end #page -->
 </div>
 </body>
